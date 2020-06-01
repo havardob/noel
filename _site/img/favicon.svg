@@ -1,19 +1,19 @@
 <svg xmlns="http://www.w3.org/2000/svg" 
-    xmlns:xlink="http://www.w3.org/1999/xlink" width="512" height="512" viewBox="0 0 512 512">
-    <defs>
-        <clipPath id="clip-favicon">
-            <rect width="512" height="512"/>
-        </clipPath>
-    </defs>
-    <g id="favicon" clip-path="url(#clip-favicon)">
-        <g id="Rectangle_49" data-name="Rectangle 49" transform="matrix(0.966, -0.259, 0.259, 0.966, 66.554, 146.966)" fill="#fff" stroke="#000" stroke-width="30">
-            <rect width="363.705" height="363.705" stroke="none"/>
-            <rect x="15" y="15" width="333.705" height="333.705" fill="none"/>
-        </g>
-        <g id="Rectangle_46" data-name="Rectangle 46" transform="matrix(0.966, -0.259, 0.259, 0.966, 0, 108.533)" fill="#fff" stroke="#000" stroke-width="30">
-            <rect width="363.705" height="363.705" stroke="none"/>
-            <rect x="15" y="15" width="333.705" height="333.705" fill="none"/>
-        </g>
-        <path id="Path_273" data-name="Path 273" d="M0,0H27.332L102.16,113.7V0h27.332v161.3H102.16L27.332,47.607V161.3H0Z" transform="matrix(0.966, -0.259, 0.259, 0.966, 139.67, 180.78)"/>
+  xmlns:xlink="http://www.w3.org/1999/xlink" width="512" height="512" viewBox="0 0 512 512">
+  <defs>
+    <clipPath id="clip-favicon">
+      <rect width="512" height="512"/>
+    </clipPath>
+  </defs>
+  <g id="favicon" clip-path="url(#clip-favicon)">
+    <g id="Rectangle_49" data-name="Rectangle 49" transform="matrix(0.966, -0.259, 0.259, 0.966, 66.554, 146.966)" fill="#ccc" stroke="#000" stroke-width="30">
+      <rect width="363.705" height="363.705" stroke="none"/>
+      <rect x="15" y="15" width="333.705" height="333.705" fill="none"/>
     </g>
+    <g id="Rectangle_46" data-name="Rectangle 46" transform="matrix(0.966, -0.259, 0.259, 0.966, 0, 108.533)" fill="#fff" stroke="#000" stroke-width="30">
+      <rect width="363.705" height="363.705" stroke="none"/>
+      <rect x="15" y="15" width="333.705" height="333.705" fill="none"/>
+    </g>
+    <path id="Path_273" data-name="Path 273" d="M0,0H27.332L102.16,113.7V0h27.332v161.3H102.16L27.332,47.607V161.3H0Z" transform="matrix(0.966, -0.259, 0.259, 0.966, 139.67, 180.78)"/>
+  </g>
 </svg>
