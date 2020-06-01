@@ -10,7 +10,7 @@ This site is a just a silly side project made by me, [Håvard Brynjulfsen](https
 
 A stand-up comedian once had a bit about the struggle of choosing baby names and pleaded that his wife wouldn't name their son "Noel" because it sounded like the name of a person who would spew out fun facts at a party. Alas, my nickname is now "Noel".
 
-## What's a 'classic go-to'?
+## What's a "classic go-to"?
 
 Some facts are more fun than others. The classic go-tos are my personal favorites. Akward silence? Hit them with a classic!
 
