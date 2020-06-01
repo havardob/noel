@@ -1,0 +1,141 @@
+{% include "components/head.njk" %}
+
+<header class="header">
+    <div id="themepicker" class="themepicker">
+        <h2 class="themepicker-title">Choose a color theme</h2>
+        <div class="themepicker-list">
+
+            <!-- <button class="theme-button-movie kill-bill" id="kill-bill"></button>
+                    <button class="theme-button-movie lotr" id="lotr"></button>
+                    <button class="theme-button-movie la-la-land" id="la-la-land"></button>
+                    <button class="theme-button-movie blade-runner-2049" id="blade-runner-2049"></button>
+                    <button class="theme-button-movie matrix" id="matrix"></button>-->
+            <button id="default" class="theme-button default" aria-label="Pick the Default-theme">
+                <span class="theme-button-name">Default</span>
+                <span class="theme-button-palette">
+                    <span class="palette-preview theme-color-1"></span>
+                    <span class="palette-preview theme-color-2"></span>
+                    <span class="palette-preview theme-color-3"></span>
+                    <span class="palette-preview theme-color-4"></span>
+                </span>
+            </button>
+            <button id="kill-bill" class="theme-button kill-bill" aria-label="Pick the Kill Bill-theme">
+                <span class="theme-button-name">Kill Bill</span>
+                <span class="theme-button-palette">
+                    <span class="palette-preview theme-color-1"></span>
+                    <span class="palette-preview theme-color-2"></span>
+                    <span class="palette-preview theme-color-3"></span>
+                    <span class="palette-preview theme-color-4"></span>
+                </span>
+            </button>
+            <button id="lotr" class="theme-button lotr" aria-label="Pick the Lord of the Rings-theme">
+                <span class="theme-button-name">LOTR</span>
+                <span class="theme-button-palette">
+                    <span class="palette-preview theme-color-1"></span>
+                    <span class="palette-preview theme-color-2"></span>
+                    <span class="palette-preview theme-color-3"></span>
+                    <span class="palette-preview theme-color-4"></span>
+                </span>
+            </button>
+            <button id="john-wick" class="theme-button john-wick" aria-label="Pick the John Wick-theme">
+                <span class="theme-button-name">John Wick</span>
+                <span class="theme-button-palette">
+                    <span class="palette-preview theme-color-1"></span>
+                    <span class="palette-preview theme-color-2"></span>
+                    <span class="palette-preview theme-color-3"></span>
+                    <span class="palette-preview theme-color-4"></span>
+                </span>
+            </button>
+            <button id="frozen" class="theme-button frozen" aria-label="Pick the Frozen-theme">
+                <span class="theme-button-name">Frozen</span>
+                <span class="theme-button-palette">
+                    <span class="palette-preview theme-color-1"></span>
+                    <span class="palette-preview theme-color-2"></span>
+                    <span class="palette-preview theme-color-3"></span>
+                    <span class="palette-preview theme-color-4"></span>
+                </span>
+            </button>
+            <button id="drive" class="theme-button drive" aria-label="Pick the Drive-theme">
+                <span class="theme-button-name">Drive</span>
+                <span class="theme-button-palette">
+                    <span class="palette-preview theme-color-1"></span>
+                    <span class="palette-preview theme-color-2"></span>
+                    <span class="palette-preview theme-color-3"></span>
+                    <span class="palette-preview theme-color-4"></span>
+                </span>
+            </button>
+            <button id="matrix" class="theme-button matrix" aria-label="Pick the Matrix-theme">
+                <span class="theme-button-name">Matrix</span>
+                <span class="theme-button-palette">
+                    <span class="palette-preview theme-color-1"></span>
+                    <span class="palette-preview theme-color-2"></span>
+                    <span class="palette-preview theme-color-3"></span>
+                    <span class="palette-preview theme-color-4"></span>
+                </span>
+            </button>
+        </div>
+    </div>
+    <div class="header-content">
+        <div class="header-wrapper">
+            <h1 class="header-logo">
+                <a href="/" class="header-logo-link">noel.<span>fun</span></a>
+            </h1>
+            <nav class="nav">
+
+                <!-- <a class="nav-link icon icon--external" href="#">Github</a> -->
+                <a class="nav-link" href="#about">About</a>
+            </nav>
+            <button id="themepickerToggle" class="themepicker-toggle" aria-label="Choose a color theme"></button>
+        </div>
+    </div>
+
+</header>
+
+<main class="main">
+    <div class="main-content">
+        <p class="tagline">Share a fun fact with your friends!</p>
+        <div class="facts" id="factList">
+            {% set postslist = collections.post %}
+            {% for post in postslist %}
+                <div class="fact">
+                    <h2 class="fact-title">
+                        {% if post.data.title %}
+                            #{{ post.data.title }}
+                        {% else %}
+						#Un-numbered
+					{% endif %}
+                    </h2>
+                    {% if post.data.fact %}
+                        <p class="fact-info">
+                            {{ post.data.fact | safe }}
+                        </p>
+                        <a href="https://twitter.com/share?text=&quot;{{ post.data.fact | safe }}&quot; From: &url=noel.fun" target="_blank" rel="noopener" class="fact-source-link icon icon--arrow-forward">Share on Twitter</a>
+
+                    {% endif %}
+
+                    {% if post.data.badge %}
+                        <span class="fact-badge">Classic go-to</span>
+                    {% endif %}
+                </div>
+            {% endfor %}
+            <div class="facts-actions">
+                <button class="button button--unfold" id="factListToggle">View all facts</button>
+            </div>
+        </div>
+    </div>
+    <section class="section">
+        <div class="section-content">
+            <h1 id="about" class="section-title">About</h1>
+            <div class="md-content">
+                {{ content | safe }}
+            </div>
+        </div>
+    </section>
+</main>
+<footer class="footer">
+    <div class="footer-content md-content">
+        <p>Made with <a href="https://www.11ty.dev/">11ty</a>. View on <a href="https://github.com/havardob/noel">Github</a>
+        </p>
+    </div>
+</footer>
+{% include "components/foot.njk" %}

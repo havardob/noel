@@ -1,0 +1,22 @@
+{
+  "name": "noel",
+  "version": "1.0.0",
+  "description": "A collection of my favorite fun facts",
+  "main": ".eleventy.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/havardob/noel.git"
+  },
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/havardob/noel/issues"
+  },
+  "homepage": "https://github.com/havardob/noel#readme",
+  "dependencies": {
+    "@11ty/eleventy": "^0.11.0"
+  }
+}

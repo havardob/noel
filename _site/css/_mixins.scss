@@ -1,0 +1,19 @@
+@mixin screen-size($screen-size) {
+   @if $screen-size==tablet-portrait {
+      @media only screen and (min-width: 600px) {
+         @content;
+      }
+   } @else if $screen-size==tablet-landscape {
+      @media only screen and (min-width: 900px) {
+         @content;
+      }
+   } @else if $screen-size==desktop {
+      @media only screen and (min-width: 1400px) {
+         @content;
+      }
+   } @else if $screen-size==hover-available {
+      @media (hover: hover) and (pointer: fine) {
+         @content;
+      }
+   }
+}
