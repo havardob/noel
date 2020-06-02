@@ -14,12 +14,30 @@
    --scrollbar-track-color: var(--color-bg-secondary);
 }
 
+@media (prefers-color-scheme: dark) {
+   :root {
+      --color-text: #fff;
+      --color-text-offset: #666;
+      --color-bg-secondary: #2a2a2a;
+      --color-bg-primary: #000;
+      --color-bg-primary-offset: #2a2a2a;
+   }
+}
+
 .default {
    --color-text: #000;
    --color-text-offset: #ccc;
    --color-bg-secondary: #ffcc00;
    --color-bg-primary: #fff;
    --color-bg-primary-offset: #eee;
+}
+
+.dark {
+   --color-text: #fff;
+   --color-text-offset: #666;
+   --color-bg-secondary: #2a2a2a;
+   --color-bg-primary: #000;
+   --color-bg-primary-offset: #2a2a2a;
 }
 
 .kill-bill {
