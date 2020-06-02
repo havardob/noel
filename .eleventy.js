@@ -30,7 +30,7 @@ module.exports = function (eleventyConfig) {
 
     eleventyConfig.addCollection("sortAlphabetically", function (collection) {
         return collection.getFilteredByTag('post').sort(function (a, b) {
-            return a.data.title - b.data.title;
+            return b.data.title - a.data.title;
         });
     });
 }

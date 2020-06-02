@@ -4,7 +4,7 @@ layout: frontpage.njk
 
 ## What is this site?
 
-This site is a just a silly side project made by me, [Håvard Brynjulfsen](https://havardbrynjulfsen.design). It's a collection of my favorite fun facts. You see, I have a tendency to blurt out random fun facts at parties or when hanging out with friends. Despite the high quality of the facts some of my ~~best friends~~ former friends claim that they aren't excactly _fun_. I beg to differ.
+This site is a just a silly side project made by me, [Håvard Brynjulfsen](https://havardbrynjulfsen.design). It's a collection of my favorite fun facts. You see, I have a tendency to blurt out random fun facts at parties or when hanging out with friends. Despite the high quality of the facts some of my ~~best~~ former friends claim that they aren't excactly _fun_. I beg to differ.
 
 ## Why the name "noel.fun"?
 
@@ -12,7 +12,7 @@ A stand-up comedian once had a bit about the struggle of choosing baby names and
 
 ## What's a "classic go-to"?
 
-Some facts are more fun than others. The classic go-tos are my personal favorites. Akward silence? Hit them with a classic!
+Some facts are more fun than others. The classic go-tos are my personal favorites. Awkward silence? Hit them with a classic!
 
 ## Do you have any sources to back these facts?
 

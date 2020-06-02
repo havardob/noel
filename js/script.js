@@ -37,7 +37,7 @@ factListToggle.addEventListener("click", function () {
     factListToggle.classList.toggle('is-open');
     factList.classList.toggle('is-open');
     if (factListToggle.classList.contains('is-open')) {
-        factListToggle.innerHTML = 'View less facts';
+        factListToggle.innerHTML = 'View fewer facts';
     } else {
         factListToggle.innerHTML = 'View all facts';
     }
