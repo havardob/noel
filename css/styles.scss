@@ -503,6 +503,11 @@ body {
    font-size: 0.875rem;
    font-weight: 700;
    background-color: var(--color-bg-secondary);
+   @include screen-size(desktop) {
+      font-size: 1rem;
+      height: 48px;
+      width: 180px;
+   }
 }
 
 .facts-actions {
