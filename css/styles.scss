@@ -646,50 +646,14 @@ body {
    text-align: center;
 }
 
-// .scroll-to-top {
-//    text-decoration: none;
-//    display: inline-flex;
-//    align-items: center;
-//    padding: 0.5rem 1.5rem;
-//    color: var(--color-bg-secondary);
-//    border: 4px solid var(--color-bg-secondary);
-//    &:after {
-//       font-family: "Material Icons Outlined";
-//       font-size: 1.25rem;
-//       display: block;
-//       color: inherit;
-//       margin-left: 0.5rem;
-//       content: "arrow_upward";
-//    }
-// }
-
-// .theme-button-movie {
-//    background-image: url("https://a.ltrbxd.com/resized/sm/upload/sw/w2/ep/v4/9O50TVszkz0dcP5g6Ej33UhR7vw-0-460-0-690-crop.jpg?k=604246a795");
-//    background-repeat: no-repeat;
-//    background-size: cover;
-//    width: 115px;
-//    height: 172px;
-//    border-radius: 0.5rem;
-//    margin-left: 0.5rem;
-//    margin-right: 0.5rem;
-
-//    &.kill-bill {
-//       background-image: url("https://a.ltrbxd.com/resized/sm/upload/sw/w2/ep/v4/9O50TVszkz0dcP5g6Ej33UhR7vw-0-460-0-690-crop.jpg?k=604246a795");
-//    }
-
-//    &.lotr {
-//       background-image: url("https://a.ltrbxd.com/resized/sm/upload/3t/vq/0u/m6/1tX9ZlgVvWjAQhMs1vAfsYpi7VK-0-460-0-690-crop.jpg?k=1f495eb1d5");
-//    }
-
-//    &.blade-runner-2049 {
-//       background-image: url("https://a.ltrbxd.com/resized/film-poster/2/6/5/4/3/9/265439-blade-runner-2049-0-460-0-690-crop.jpg?k=1d20621447");
-//    }
-
-//    &.matrix {
-//       background-image: url("https://image.tmdb.org/t/p/w220_and_h330_face/dXNAPwY7VrqMAo51EKhhCJfaGb5.jpg");
-//    }
-
-//    &.la-la-land {
-//       background-image: url("https://a.ltrbxd.com/resized/film-poster/2/4/0/3/4/4/240344-la-la-land-0-460-0-690-crop.jpg?k=2bf2e22287");
-//    }
-// }
+.opl-ribbon {
+   display: none;
+   position: fixed;
+   left: 0;
+   top: 100px;
+   z-index: 999999;
+   text-decoration: none;
+   @include screen-size(tablet-portrait) {
+      display: inline-block;
+   }
+}
