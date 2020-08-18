@@ -4,7 +4,7 @@ layout: frontpage.njk
 
 ## What is this site?
 
-This site is a just a silly side project made by me, [Håvard Brynjulfsen](https://havardbrynjulfsen.design). It's a collection of my favorite fun facts. You see, I have a tendency to blurt out random fun facts at parties or when hanging out with friends. Despite the high quality of the facts some of my ~~best~~ former friends claim that they aren't excactly _fun_. I beg to differ.
+This site is a just a silly side project made by me, [Håvard Brynjulfsen](https://havardbrynjulfsen.design). It's a collection of my favorite fun facts. You see, I have a tendency to blurt out random fun facts at parties or when hanging out with friends. Despite the high quality of the facts some of my ~~best~~ former friends claim that they aren't exactly _fun_. I beg to differ.
 
 ## Why the name "noel.fun"?
 
