@@ -576,9 +576,10 @@ body {
    width: 90%;
    max-width: var(--max-content-width);
    padding-top: 3rem;
-   padding-bottom: 4rem;
+   padding-bottom: 6rem;
    font-size: 1rem;
    @include screen-size(desktop) {
+      padding-bottom: 4rem;
       font-size: 1.125rem;
       max-width: 800px;
    }
@@ -647,13 +648,16 @@ body {
 }
 
 .opl-ribbon {
-   display: none;
-   position: fixed;
+   display: inline-block;
+   position: absolute;
    left: 0;
-   top: 100px;
+   bottom: 70px;
    z-index: 999999;
    text-decoration: none;
-   @include screen-size(tablet-portrait) {
-      display: inline-block;
+   @include screen-size(desktop) {
+      position: fixed;
+      bottom: initial;
+      left: 0;
+      top: 100px;
    }
 }
