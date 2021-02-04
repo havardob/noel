@@ -1,6 +1,7 @@
 backend: 
   name: github
   repo: havardob/noel
+  base_url: https://noel.fun
 
 publish_mode: editorial_workflow
 media_folder: img
