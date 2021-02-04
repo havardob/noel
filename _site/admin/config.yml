@@ -1,0 +1,15 @@
+backend: 
+  name: github
+  repo: havardob/noel
+
+publish_mode: editorial_workflow
+media_folder: img
+collections: 
+ - name: 'post'
+   label: 'Posts'
+   folder: 'posts'
+   create: true
+   fields: 
+      - {label: "Title", name: "title", widget: "string"}
+      - {label: "Fact", name: "fact", widget: "markdown"}
+      - {label: "Badge", name: "badge", widget: "boolean"}

@@ -27,6 +27,7 @@ module.exports = function (eleventyConfig) {
     eleventyConfig.addPassthroughCopy("favicon.svg");
     eleventyConfig.addPassthroughCopy("css");
     eleventyConfig.addPassthroughCopy("js");
+    eleventyConfig.addPassthroughCopy("admin");
 
     eleventyConfig.addCollection("sortAlphabetically", function (collection) {
         return collection.getFilteredByTag('post').sort(function (a, b) {
