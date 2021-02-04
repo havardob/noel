@@ -1,7 +1,7 @@
 backend: 
   name: github
   repo: havardob/noel
-  base_url: https://noel.fun
+  base_url: https://api.netlify.com
   auth_endpoint: auth
 
 media_folder: img
