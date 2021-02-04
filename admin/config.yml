@@ -2,8 +2,8 @@ backend:
   name: github
   repo: havardob/noel
   base_url: https://noel.fun
+  auth_endpoint: auth
 
-publish_mode: editorial_workflow
 media_folder: img
 collections: 
  - name: 'post'
