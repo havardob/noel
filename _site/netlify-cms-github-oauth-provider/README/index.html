@@ -1,0 +1,99 @@
+<h1>Netlify-cms-github-oauth-provider</h1>
+<p><em><strong>External authentication providers were enabled in netlify-cms version 0.4.3. Check your web console to see your netlify-cms version.</strong></em></p>
+<p><a href="https://www.netlifycms.org/">netlify-cms</a> has its own github OAuth client. This implementation was created by reverse engineering the results of that client, so it's not necessary to reimplement client part of <a href="https://www.netlifycms.org/">netlify-cms</a>.</p>
+<p>Github, Github Enterprise and Gitlab are currently supported, but as this is a general Oauth client, feel free to submit a PR to add other git hosting providers.</p>
+<p>Other implementations in: <a href="https://github.com/igk1972/netlify-cms-oauth-provider-go">Go lang</a>.</p>
+<h2>1) Install Locally</h2>
+<p><strong>Install Repo Locally</strong></p>
+<pre><code class="language-bash">git clone https://github.com/vencax/netlify-cms-github-oauth-provider
+cd netlify-cms-github-oauth-provider
+npm install
+</code></pre>
+<p><strong>Create Oauth App</strong>
+Information is available on the <a href="https://developer.github.com/apps/building-integrations/setting-up-and-registering-oauth-apps/registering-oauth-apps/">Github Developer Documentation</a> or <a href="https://docs.gitlab.com/ee/integration/oauth_provider.html">Gitlab Docs</a>. Fill out the fields however you like, except for <strong>authorization callback URL</strong>. This is where Github or Gitlab will send your callback after a user has authenticated, and should be <code>https://your.server.com/callback</code> for use with this repo.</p>
+<h2>2) Config</h2>
+<h3>Auth Provider Config</h3>
+<p>Configuration is done with environment variables, which can be supplied as command line arguments, added in your app hosting interface, or loaded from a .env (<a href="https://github.com/motdotla/dotenv">dotenv</a>) file.</p>
+<p><strong>Example .env file:</strong></p>
+<pre><code class="language-ini">NODE_ENV=production
+ORIGIN=www.my_organisation.com
+OAUTH_CLIENT_ID=f432a9casdff1e4b79c57
+OAUTH_CLIENT_SECRET=pampadympapampadympapampadympa
+REDIRECT_URL=https://your.server.com/callback
+GIT_HOSTNAME=https://github.website.com
+PORT=3000
+</code></pre>
+<p><strong>NOTE</strong>: ORIGIN is mandatory and can contain regex (e.g. <code>.*.my_organisation.com</code>)</p>
+<p>For Gitlab you also have to provide this environment variables:</p>
+<pre><code class="language-ini">OAUTH_PROVIDER=gitlab
+SCOPES=api
+OAUTH_AUTHORIZE_PATH=/oauth/authorize
+OAUTH_TOKEN_PATH=/oauth/token
+</code></pre>
+<p>You can also setup an environment variable to configure &quot;_blank&quot; target when auth window is opened. Default is &quot;_self&quot;.</p>
+<pre><code class="language-ini">AUTH_TARGET=_blank
+</code></pre>
+<p><strong>Client ID &amp; Client Secret:</strong>
+After registering your Oauth app, you will be able to get your client id and client secret on the next page.</p>
+<p><strong>Redirect URL (optional in github, mandatory in gitlab):</strong>
+Include this if you need your callback to be different from what is supplied in your Oauth app configuration.</p>
+<p><strong>Git Hostname (Default github.com):</strong>
+This is only necessary for use with Github Enterprise or Gitlab.</p>
+<p><strong>Port number (Default 3000)</strong>
+If you do not want to run the app on 3000.</p>
+<h3>CMS Config</h3>
+<p>You also need to add <code>base_url</code> to the backend section of your netlify-cms's config file. <code>base_url</code> is the live URL of this repo with no trailing slashes.</p>
+<pre><code class="language-yaml">backend:
+  name: [github | gitlab]
+  repo: user/repo   # Path to your Github/Gitlab repository
+  branch: master    # Branch to update
+  base_url: https://your.server.com # Path to ext auth provider
+</code></pre>
+<h2>3) Deploy</h2>
+<h3>Heroku</h3>
+<p>Basic instructions for pushing to heroku are available in the <a href="http://www.vxk.cz/tips/2017/05/18/netlify-cms/">original blog post</a>.</p>
+<h3>Locally</h3>
+<p>You can run the instance like so:</p>
+<pre><code class="language-bash">npm start
+</code></pre>
+<p>Or with commandline provided variables like so:</p>
+<pre><code class="language-bash">PORT=3111 NODE_ENV=production ORIGIN=www.my_organisation.com OAUTH_CLIENT_ID=... OAUTH_CLIENT_SECRET=... npm start
+</code></pre>
+<p>If running behind reverse-proxy (e.g. nginx), the <code>/auth</code> and <code>/callback</code> paths need to be proxied, e.g. like so:</p>
+<pre><code class="language-nginx"> location /auth {
+    proxy_pass http://127.0.0.1:3111;
+    proxy_pass_request_headers      on;
+    proxy_set_header   X-Real-IP        $remote_addr;
+    proxy_set_header   X-Forwarded-For  $proxy_add_x_forwarded_for;
+    proxy_set_header Early-Data $ssl_early_data;
+}
+
+location /callback {
+    proxy_pass http://127.0.0.1:3111;
+    proxy_pass_request_headers      on;
+    proxy_set_header   X-Real-IP        $remote_addr;
+    proxy_set_header   X-Forwarded-For  $proxy_add_x_forwarded_for;
+    proxy_set_header Early-Data $ssl_early_data;
+}
+</code></pre>
+<p>You may want to run this as a systemd service like so:</p>
+<pre><code class="language-bash">$ cat /etc/systemd/system/oauth-github.service
+</code></pre>
+<pre><code class="language-ini">[Unit]
+Description=OAuth provider for Netlify CMS and Github
+After=network.target
+
+[Service]
+Type=simple
+User=user
+WorkingDirectory=/opt/netlify-cms-github-oauth-provider
+ExecStart=/usr/bin/npm run start
+Restart=always
+Environment=PORT=3111
+Environment=ORIGIN=www.my_organisation.com
+Environment=OAUTH_CLIENT_ID=...
+Environment=OAUTH_CLIENT_SECRET=...
+
+[Install]
+WantedBy=multi-user.target
+</code></pre>
