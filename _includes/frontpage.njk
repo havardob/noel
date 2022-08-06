@@ -1,6 +1,6 @@
 {% include "components/head.njk" %}
 
-<header class="header">
+<header class="header" id="top">
     <div id="themepicker" class="themepicker">
         <h2 class="themepicker-title">Choose a color theme</h2>
         <div class="themepicker-list">
@@ -144,6 +144,9 @@
             <div class="md-content">
                 {{ content | safe }}
             </div>
+        </div>
+        <div class="section-footer">
+            <a href="#top" class="icon icon--arrow-upward">Back to top</a>
         </div>
     </section>
 </main>

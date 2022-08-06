@@ -187,6 +187,13 @@ body {
     }
   }
 
+  &--arrow-upward {
+    &:after {
+      content: "arrow_downward";
+      transform: rotate(180deg);
+    }
+  }
+
   &--refresh {
     &:after {
       content: "refresh";
@@ -598,6 +605,21 @@ body {
   }
 }
 
+.section-footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  a {
+    display: inline-flex;
+    align-items: center;
+    column-gap: 4px;
+    text-decoration: none;
+    color: var(--color-text);
+  }
+}
+
 .md-content {
   h1,
   h2,
@@ -649,7 +671,7 @@ body {
   display: inline-block;
   position: absolute;
   left: 0;
-  bottom: 70px;
+  bottom: 120px;
   z-index: 999999;
   text-decoration: none;
   @include screen-size(desktop) {
@@ -717,3 +739,4 @@ body {
   padding-bottom: 5vw;
   display: none;
 }
+

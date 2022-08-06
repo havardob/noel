@@ -335,6 +335,10 @@ body.no-scroll {
 .icon--arrow-downward:after {
   content: "arrow_downward";
 }
+.icon--arrow-upward:after {
+  content: "arrow_downward";
+  transform: rotate(180deg);
+}
 .icon--refresh:after {
   content: "refresh";
 }
@@ -734,6 +738,22 @@ body.no-scroll {
   margin-top: -2rem;
 }
 
+.section-footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+.section-footer a {
+  display: inline-flex;
+  align-items: center;
+  -moz-column-gap: 4px;
+       column-gap: 4px;
+  text-decoration: none;
+  color: var(--color-text);
+}
+
 .md-content h1,
 .md-content h2,
 .md-content h3,
@@ -775,7 +795,7 @@ body.no-scroll {
   display: inline-block;
   position: absolute;
   left: 0;
-  bottom: 70px;
+  bottom: 120px;
   z-index: 999999;
   text-decoration: none;
 }
