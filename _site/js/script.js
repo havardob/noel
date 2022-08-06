@@ -5,6 +5,7 @@ const themesToggle = document.getElementById('themepickerToggle');
 const factList = document.getElementById('factList');
 const factListToggle = document.getElementById('factListToggle');
 
+
 themesToggle.addEventListener("click", function () {
     themesPanel.classList.toggle('is-open');
     themesToggle.classList.toggle('is-open');
@@ -42,3 +43,46 @@ factListToggle.addEventListener("click", function () {
         factListToggle.innerHTML = 'View all facts';
     }
 })
+
+const filterSearch = document.getElementById("filterSearch");
+const filterNumOf = document.getElementById("filterNumOf");
+const filterNumTot = document.getElementById("filterNumTot");
+const filterEmptyState = document.getElementById("filterEmptyState");
+let facts = document.querySelectorAll(".fact");
+
+filterSearch.addEventListener("click", function(){
+    factListToggle.style.display = "none";
+        factList.classList.toggle("is-open");
+})
+
+setSearchResults(facts.length, facts.length);
+
+function setSearchResults(numOf, numTot) {
+    filterNumOf.innerText = numOf;
+    filterNumTot.innerText = numTot;
+}
+
+filterSearch.addEventListener("keyup", function() {
+    let searchValue = event.target.value.toLowerCase();
+    let hits = 0;
+    
+    for (let i = 0; i < facts.length; i++) {
+      let factText = facts[i].querySelector(".fact-info").innerText.toLowerCase();
+
+      if (factText.includes(searchValue)) {
+        facts[i].style.display = "flex";
+        hits++;
+    } else {
+        facts[i].style.display = "none";
+      }
+    }
+
+    if (hits !== 0) {
+        filterEmptyState.style.display = "none";
+    } else {
+        filterEmptyState.style.display = "block";
+    }
+
+    setSearchResults(hits, facts.length);
+
+}, false);
