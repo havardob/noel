@@ -190,11 +190,11 @@ b {
 }
 
 .dark {
-  --color-text: #fff;
-  --color-text-offset: #666;
-  --color-bg-secondary: #2a2a2a;
-  --color-bg-primary: #000;
-  --color-bg-primary-offset: #2a2a2a;
+  --color-text: #f2f5f8;
+  --color-text-offset: #768390;
+  --color-bg-secondary: #d35033;
+  --color-bg-primary: #22272e;
+  --color-bg-primary-offset: #373e47;
 }
 
 .kill-bill {
