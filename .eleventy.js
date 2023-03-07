@@ -1,6 +1,5 @@
 const MarkdownIt = require("markdown-it");
 
-
 let mdOptions = {
     html: true,
     breaks: true,
