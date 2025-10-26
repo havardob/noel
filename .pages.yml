@@ -3,6 +3,7 @@ content:
     label: Posts
     path: src/_posts
     type: collection
+    filename: '{title}.md'
     fields: 
       - name: title
         label: Title
