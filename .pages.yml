@@ -7,6 +7,8 @@ content:
     view: 
       primary: title
       sort: [title]
+      default: 
+        order: desc
     fields: 
       - name: title
         label: Title
