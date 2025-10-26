@@ -1,7 +1,7 @@
 content:
   - name: posts
     label: Posts
-    path: src/_posts
+    path: posts
     type: collection
     filename: '{primary}.md'
     view: 
