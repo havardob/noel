@@ -3,7 +3,6 @@ content:
     label: Posts
     path: src/_posts
     type: collection
-    node: string
     fields: 
       - name: title
         label: Title
