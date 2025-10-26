@@ -3,7 +3,9 @@ content:
     label: Posts
     path: src/_posts
     type: collection
-    filename: '{title}.md'
+    filename: '{primary}.md'
+    view: 
+      primary: title
     fields: 
       - name: title
         label: Title
