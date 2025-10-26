@@ -6,6 +6,7 @@ content:
     filename: '{primary}.md'
     view: 
       primary: title
+      sort: [title]
     fields: 
       - name: title
         label: Title
