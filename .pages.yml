@@ -3,3 +3,14 @@ content:
     label: Posts
     path: src/_posts
     type: collection
+    fields: 
+      - name: title
+        label: Title
+        type: string
+      - name: fact
+        label: Fact
+        type: text
+      - name: badge
+        label: Is Classic Go-To
+        type: boolean
+    
